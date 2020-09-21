@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Report Card Generator</title>
+    <title>Digital Report Card</title>
       <link rel="stylesheet" href="_static/css/bootstrap.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/datepicker.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/citheme.css" type="text/css" />
@@ -73,23 +73,17 @@
             <div id="page-wrap">
               <div id="identity">
                       <div id="logo">
-                        <div id="logoctr">
-                          <a href="javascript:;" id="change-logo" title="Change logo">Change Logo</a>
-                          <a href="javascript:;" id="save-logo" title="Save changes">Save</a>|
-                          <a href="javascript:;" id="delete-logo" title="Delete logo">Delete Logo</a>
-                          <a href="javascript:;" id="cancel-logo" title="Cancel changes">Cancel</a>
-                        </div>
-                        <div id="logohelp">
-                          <input id="imageloc" type="text" size="50" value="" /><br />
-                          (max width: 540px, max height: 100px)
-                        </div>
-                        <img id="image" src="img/log.png" alt="logo" />
+                        <img id="image" src="img/log.png" alt="logo" width="90" height="90"/>
                       </div>
                       <div id="schoolInfo">
-                        <textarea id="name">MULTIGRACE-GROUP OF SCHOOL</textarea>
-                        <textarea id="addres">123 Appleseed Street Appleville, WI 53719</textarea>
-                        <textarea id="phone">Tel:08108013285,08108013285,08108013285</textarea>
-                        <h3>SCHOOL REPORT SHEET</h3>
+                        <div id="school_name">TINY TOT PUBLIC SCHOOL</div>
+                        <div id="school_address">Jogiwala, Haridwar Road, Dehradun, Uttarakhand</div>
+                        <div id="school_phone">Tel:9997291746, 9897404599</div>
+                        <div id="school_email">Email: ttpsddn@gmail.com</div>
+                        <br>
+                        <div id="progress_report">
+                        PROGRESS REPORT
+                        </div>
                       </div>
                      <div id="pdfprint">
                         <button type="button" id="pdf">
@@ -120,21 +114,16 @@
                               </td>
                           </tr>
                           <tr>
-                              <td class="meta-head">Promotion/Class:</td>
+                              <td class="meta-head">Class:</td>
                               <td id="pcl"><textarea id="snewclass"></textarea></td>
-                              <td class="meta-head">No in class:</td>
+                              <td class="meta-head">Roll No.:</td>
                               <td id="sic"><textarea id="sinclass"></textarea></td>
-                              <td class="meta-head">Postion:</td>
+                              <td class="meta-head">Section:</td>
                               <td><textarea id="pos"></textarea></td> 
                           </tr>
                           <tr>
                             <td class="meta-head">Session:</td>
                               <td id="ss"><textarea id="ssession"></textarea></td>
-                              <td class="meta-head" colspan="2">Next term Begin on:</td>
-                              <td colspan="2">
-                                <textarea id="sresumedate" class="datepicker" value="09/09/2016">
-                                </textarea>
-                              </td>
                           </tr>
                 </table>
                   </div>
@@ -142,8 +131,8 @@
                     <table id="reportItems">
                           <tr>
                               <th>SUBJECT</th>
-                              <th>C.A Test(40)</th>
-                              <th>EXAM(60)</th>
+                              <th>Written(80)</th>
+                              <th>Oral(20)</th>
                               <th>TOTAL(100)</th>
                               <th>POSITION</th>
                               <th>REMARK</th>
@@ -183,7 +172,7 @@
                             </tr>
                              <tr>
                                 <td>No Of Times Absent</td>
-                                <td><textarea placeholder="2"></textarea></td>
+                                <td><textarea id="absentdays" placeholder="2"></textarea></td>
                             </tr>
                         </table>
                           <table>
@@ -227,14 +216,14 @@
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
                             </tr>
-                             <tr>
+                             <!-- <tr>
                       <td>Handling Tools</td>
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
-                            </tr>
+                            </tr> -->
                              <tr>
                       <td>Drawing & Painting</td>
                                 <td><input type="checkbox"/></td>
@@ -360,14 +349,14 @@
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                       <td>Speaking/handwriting</td>
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
                                 <td><input type="checkbox"/></td>
-                            </tr>
+                            </tr> -->
                         </table>
                     </div>
                   </div>  
@@ -381,11 +370,11 @@
           <hr/>
           <div role="contentinfo">
             <p>
-                &copy; Copyright  2016, EtaNetwork.
+                &copy; Copyright  2020, Tiny Tots Public School.
              
             </p>
           </div>
-          For more <a href="http://eta-network.com"> Infomation </a> . 
+          For more <a href="https://www.facebook.com/TTPSDDN/"> Infomation </a> . 
         </footer>
         </div>
       </div>
@@ -406,21 +395,18 @@
                             <select multiple="multiple" class="form-control multi-select" id="subj" 
                             name="subjects">
                                 <option>English Language</option>
-                                <option>Mathematics</option>
-                                <option>Social Studies</option>
-                                <option>Home Economics</option>
-                                <option>Primary Science</option>
-                                <option>Intro Tech</option>
-                                <option>Intergrated Science</option>
-                                <option>Creative Art</option>
-                                <option>Computer Science</option>
-                                <option>Agric Science</option>
-                                <option>Poem</option>
-                                <option>Verbal Reasoning</option>
-                                <option>Quantitative Reasoning</option>
-                                <option>Writing</option>
-                                <option>C.R.K</option>
-                                <option>I.R.S</option>
+                                <option>English Literature</option>
+                                <option>Hindi Language</option>
+                                <option>Hindi Literature</option>
+                                <option>Sanskrit</option>
+                                <option>Mathematics I</option>
+                                <option>Mathematics II</option>
+                                <option>Chemistry</option>
+                                <option>Biology</option>
+                                <option>General Knowledge</option>
+                                <option>Computer</option>
+                                <option>History/Civis</option>
+                                <option>Geography</option>
                             </select>
                           </div>   
                         </div>

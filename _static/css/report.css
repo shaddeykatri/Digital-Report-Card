@@ -1,10 +1,3 @@
-/********************************
-	 School REportcard Generator
-	 Eta-network
-	 http://eta-network.com
-	 report.css
-********************************/
-
 
 * { margin: 0; padding: 0; }
 body { font-size: 14px/1.4 ;font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif; }
@@ -24,29 +17,68 @@ table { border-collapse: collapse; }
 
 
 /*#address { width: 250px; height: 150px; float: left; }*/
-#identity{margin-left:50px}
-#logo { text-align: right; float: left; position: relative; margin-top: 25px; border: 1px solid #fff; max-width: 540px; max-height: 100px; overflow: hidden; width: 20%;}
-#logo:hover, #logo.edit { border: 1px solid #000; margin-top: 0px; max-height: 125px; }
-#logoctr { display: none; }
-#logo:hover #logoctr, #logo.edit #logoctr { display: block; text-align: right; line-height: 25px; background: #eee; padding: 0 5px; }
-#logohelp { text-align: left; display: none; font-style: italic; padding: 10px 5px;}
-#logohelp input { margin-bottom: 5px; }
-.edit #logohelp { display: block; }
-.edit #save-logo, .edit #cancel-logo { display: inline; }
-.edit #image, #save-logo, #cancel-logo, .edit #change-logo, .edit #delete-logo { display: none; }
+/* #identity{margin-left:50px} */
+#logo {
+   text-align: left; float: left; position: relative; margin-top: 25px; border: 1px solid #fff; overflow: hidden; width: 20%;
 
-#schoolInfo{margin-left: 40px;float: right; text-align: center;width: 70%;margin-top: 25px; }
+  }
+
+#schoolInfo{margin-left: 0px;float: right;width: 70%;margin-top: 25px; }
 #schoolInfo #name{
 	font-size: 20px;
 	text-transform: uppercase;
 	min-width: 20px;
 	line-height: 0.9em;
 	font-weight: bold;
-
-	
 }
-#name,#phone,#addres{width: 100%;line-height: 0.9em;}
-#addres,#phone{padding-left:10px; font-weight: 600;}
+
+#school_name{	font-size: 35px;
+	text-transform: uppercase;
+	min-width: 20px;
+	line-height: 0.9em;
+  font-weight: bold;
+}
+
+#school_address{
+  font-size: 15px;
+  text-transform: uppercase;
+  min-width: 20px;
+  line-height: 0.9em;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 3px;
+}
+
+#school_phone{
+  font-size: 15px;
+  text-transform: uppercase;
+  min-width: 20px;
+  line-height: 0.9em;
+  font-weight: bold;
+  margin-top: 5px;
+  align-items: center;
+  margin-left: 100px;
+}
+
+#school_email{
+  font-size: 15px;
+  min-width: 20px;
+  line-height: 0.9em;
+  font-weight: bold;
+  margin-top: 5px;
+  align-items: center;
+  margin-left: 107px;
+}
+
+#progress_report{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 103px;
+}
+
+#name,#phone,#addres,#email{width: 100%;line-height: 0.9em;}
+#addres,#phone,#email{padding-left:10px; font-weight: 600;}
 #schoolInfo h3{color: #000; background-color: #ccc; width:50%;padding-left: 10px; }
 .student{margin-top: 5px;}
  #studentInfo{width: 100%; line-height: 1.6em;}

@@ -1,13 +1,5 @@
 
 
-/****************************
-    School REportcard Generator
-     Eta-network
-     http://eta-network.com
-     reportcard.js
-   version 2.0
-******************************/
-
 
 function roundup(number){
   var newString;
@@ -55,8 +47,8 @@ function update_total() {
   var row = $(this).parents('.reportRow');
   var test=row.find('.test').val();
   var exam=row.find('.exam').val();
-  test=(isNaN(test) || Number(test)>40 || Number(test)<0 )?"N/A":Number(test);
-  exam=(isNaN(exam) || Number(exam)>60 || Number(exam)<0 )?"N/A":Number(exam);
+  test=(isNaN(test) || Number(test)>80 || Number(test)<0 )?"N/A":Number(test);
+  exam=(isNaN(exam) || Number(exam)>20 || Number(exam)<0 )?"N/A":Number(exam);
   if(test=="N/A"){row.find('.test').val('N/A');}
   if(exam=="N/A"){row.find('.exam').val('N/A');}
   if(test=="N/A" || exam=="N/A"){
@@ -66,17 +58,20 @@ function update_total() {
     row.find('.total').text(total);
     update_totalscore();
   }
-  //var total =Number( row.find('.test').val()) + Number( row.find('.exam').val());
-  //isNaN(total) ? row.find('.total').html("N/A") : row.find('.total').html(total);
+  var total =Number( row.find('.test').val()) + Number( row.find('.exam').val());
+  isNaN(total) ? row.find('.total').html("N/A") : row.find('.total').html(total);
   
 
- /** function update_attendace(){
-    val odays=$('#sopendays').val();
-    val pdays=$('#presentdays').val();
+  function update_attendace(){
+    var odays=$('#sopendays').val();
+    var pdays=$('#presentdays').val();
     odays=(isNaN(odays))?"N/A":Number(odays);
     pdays=(isNaN(pdays))?"N/A":Number(pdays);
-    if(odays=="N/A"){$('#sopendays').val('N/A');}
-  }**/
+    if(odays=="N/A"){
+      $('#sopendays').val('N/A');
+      $('#absentdays').val(odays-pdays);
+    }
+  }
   
 }
 
