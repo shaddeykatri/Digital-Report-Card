@@ -101,16 +101,14 @@ function rowTemp(subj){
             '<td><textarea class="exam" placeholder="0"></textarea></td>'+
            '<td class="t">'+
              '<span class="total">0</span>'+
-            '</td>'+
-            '<td><textarea class="position" placeholder="0th"></textarea></td>'+
-            '<td><textarea class="remark" placeholder="Excellent"></textarea></td>'+
+            '</td>'
           '</tr>';
   }
 
 var nOfs=function(){
       var n='<select class="form-control" id="numOfStudent">';
           n+='<option></option>';
-      for (var i = 1; i <=40; i++){
+      for (var i = 1; i <=50; i++){
         n+='<option>'+' '+i+' '+'</option>';
         }
       n+='</select>';
@@ -120,34 +118,41 @@ var nOfs=function(){
 var ster=function(){
    return '<select class="form-control" id="schoolTerm">'+
                '<option></option>'+
-               '<option>1st</option>'+
-                '<option>2nd</option>'+
-                '<option>3rd</option>'+
+               '<option>Mid Term</option>'+
+                '<option>End Term</option>'
             '</select>';
        };
 
 var ssess=function(){
     var n='<select class="form-control" id="schoolSession">';
         n+='<option></option>';
-    for (var i = 2010; i <=2019; i++){
+    for (var i = 2019; i <=2030; i++){
       n+='<option>'+i+'/'+(i+1)+'</option>';
       }
     n+='</select>';
     return n;
 };
 
-var pclasshelper=function(end,txt){
+var pclasshelper=function(){
     var t='';
-    for (var i = 1; i <=end; i++){
-        t+='<option>'+txt+' '+i+' '+'</option>';
-        }
+    for (var i = 1; i <=12; i++){
+        if(i==1)
+        t+='<option>'+i+"st"+'</option>';
+        else if(i==2)
+        t+='<option>'+i+"nd"+'</option>';
+        else if(i==3)
+        t+='<option>'+i+"rd"+'</option>';
+        else
+        t+='<option>'+i+"th"+'</option>';
+    }
         return t;
+    
     };
 
 var pclass=function(){
     var n='<select class="form-control" id="proClass">';
         n+='<option></option>';
-        n+=pclasshelper(6,'pri')+pclasshelper(3,'Jss')+pclasshelper(3,'sss');
+        n+=pclasshelper();
         n+='</select>';
         return n;
   };
@@ -396,10 +401,22 @@ function removerow(id){
 }
 
 (function() {
-  var db = new Dexie("rcg");
-  db.version(1).stores({ reports:'++id,name,term,newclass,numclass,session,nexterm,update,total',
-                         marks:'++id,subject,test,exam,stud_id' })
-  db.open().then(populate);
+
+  const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://Sachit:pass1234@cluster0.litpo.mongodb.net/DigitalReportCard?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+
+  
+  
+  client.close();
+  });
+
+  // var db = new Dexie("rcg");
+  // db.version(1).stores({ reports:'++id,name,term,newclass,numclass,session,nexterm,update,total',
+  //                        marks:'++id,subject,test,exam,stud_id' })
+  // db.open().then(populate);
 
     //remove
    function test(){

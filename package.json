@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/shaddeykatri/Digital-Report-Card#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.6"
   }
 }
